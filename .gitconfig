@@ -1,0 +1,36 @@
+[user]
+	email = satyajit@example.com
+	name = satyajit
+[color]
+	ui = auto
+[core]
+	autocrlf = input
+	excludesfile = /Users/satyajit/.gitignore
+[alias]
+	s = status -s
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+	ds = diff --staged
+	ll = log --oneline --graph --decorate --branches --tags --remotes
+	lol = log --all --graph --decorate --oneline
+	undo = reset HEAD@{1}
+[diff]
+	tool = vimdiff
+	#external = ~/bin/git-opendiff
+[merge]
+	tool = vimdiff
+[mergetool "diffmerge"]
+        cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+        trustExitCode = false
+[difftool]
+	prompt = false
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
